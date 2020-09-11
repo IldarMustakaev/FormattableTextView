@@ -29,7 +29,7 @@ final class ViewController: UIViewController {
     var alpha = 1.0
 	let formats = [
 		["dddd dddd dddd dddd"],
-		["wdddww dd"],
+		["wwwwwwwwwwwwwwwwwwwwwwwwwwww dd"],
 		["+7(ddd)ddd-dd-dd",
 		"+44 07ddd dddddd"],
 		["dddddd ₽"]

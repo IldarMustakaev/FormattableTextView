@@ -9,15 +9,19 @@
 import Foundation
 import UIKit
 
+private let emptyAttributedString = NSAttributedString(string: "")
+
 @IBDesignable
 open class FormattableTextField: UITextField, FormattableInput, FormattableInputInternal {
 	
 	internal var internalAttributedText: NSAttributedString {
 		get {
-			return self.attributedText ?? NSAttributedString(string: "")
+			return self.attributedText ?? emptyAttributedString
 		}
 		set {
-			self.attributedText = newValue
+			DispatchQueue.main.async {
+				self.attributedText = newValue
+			}
 		}
 	}
 	
