@@ -84,7 +84,7 @@ open class FormattableTextField: UITextField, FormattableInput, FormattableInput
 	
 	@IBInspectable public var insetX: CGFloat = 5 {
 		didSet {
-			layoutIfNeeded()
+			setNeedsLayout()
 		}
 	}
 	
