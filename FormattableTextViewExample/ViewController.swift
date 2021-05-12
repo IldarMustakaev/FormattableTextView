@@ -29,7 +29,7 @@ final class ViewController: UIViewController {
     var alpha = 1.0
 	let formats = [
 		["dddd dddd dddd dddd"],
-		["wdddww dd"],
+		["ddd-ddd"],
 		["+7 (ddd) ddd-dd-dd",
 		"+44 07ddd dddddd"],
 		["dddddd ₽"]
@@ -104,6 +104,11 @@ final class ViewController: UIViewController {
             tv.maskAttributes[NSAttributedString.Key.font] = UIFont(descriptor: font.fontDescriptor, size: CGFloat(sender.value))
         }
     }
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.view.endEditing(true)
+	}
     
     @IBAction func stepperAlphaChanged(_ sender: UIStepper) {
         labelAlpha.text = "\(String(format: "%.1f", sender.value))"
